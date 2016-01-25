@@ -271,6 +271,7 @@ angular.module("com.2fdevs.videogular")
                 }
 
                 this.isLive = false;
+
             }
             else {
                 // It's a live streaming without and end
@@ -505,6 +506,12 @@ angular.module("com.2fdevs.videogular")
         };
 
         this.changeSource = function (newValue) {
+            hasStartTimePlayed = false;
+
+            this.startTime = $scope.vgStartTime;
+            this.virtualClipDuration = $scope.vgVirtualClipDuration;
+            isVirtualClip = this.startTime > 0 && this.virtualClipDuration;
+
             $scope.vgChangeSource({$source: newValue});
         };
 
@@ -1228,6 +1235,10 @@ angular.module("com.2fdevs.videogular")
  * This is useful to allow continuous playback between different routes.
  *
  * @param {boolean} [vgAutoPlay=false] vgAutoPlay Boolean value or a String with a scope name variable to auto start playing video when it is initialized.
+ *
+ * @param {boolean} [vgStartTime=-1] vgStartTime Number value or a String with a scope name variable to start playing the video at a certain time.
+ *
+ * @param {boolean} [vgVirtualClipDuration=-1] vgVirtualClipDuration Number value or a String with a scope name variable for a length to limit the video playback to.
  *
  * **This parameter is disabled in mobile devices** because user must click on content to prevent consuming mobile data plans.
  *
