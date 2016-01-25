@@ -1,6 +1,6 @@
 {
-	"name": "videogular",
-	"version": "1.4.0",
+	"name": "re-videogular",
+	"version": "1.4.1",
 	"main": "index.js",
 	"dependencies": {},
 	"devDependencies": {
