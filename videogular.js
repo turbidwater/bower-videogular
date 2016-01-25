@@ -511,7 +511,7 @@ angular.module("com.2fdevs.videogular")
 
             this.startTime = $scope.vgStartTime;
             this.virtualClipDuration = $scope.vgVirtualClipDuration;
-            isVirtualClip = this.startTime > 0 && this.virtualClipDuration;
+            isVirtualClip = Boolean( this.startTime >= 0 && this.virtualClipDuration );
 
             $scope.vgChangeSource({$source: newValue});
         };
