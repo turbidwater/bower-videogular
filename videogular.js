@@ -385,8 +385,8 @@ angular.module("com.2fdevs.videogular")
         this.seekTime = function (value, byPercent) {
             var second;
             if (byPercent) {
+                value = Math.max(0, Math.min(value, 100));
                 if (isVirtualClip) {
-                    value = Math.max(0, Math.min(value, 100));
                     second = (value * this.virtualClipDuration / 100);
                     this.mediaElement[0].currentTime = this.startTime + second;
                 }
