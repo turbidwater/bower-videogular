@@ -1583,10 +1583,11 @@ angular.module("com.2fdevs.videogular")
             return document.URL.indexOf('http://') === -1 && document.URL.indexOf('https://') === -1;
         };
 
-        /**
+        /*
          * Test the browser's support for HTML5 localStorage.
          * @returns {boolean}
          */
+
         this.supportsLocalStorage = function () {
             var testKey = 'videogular-test-key';
             var storage = $window.sessionStorage;
